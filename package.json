@@ -1,0 +1,19 @@
+{
+  "name": "poc-fastify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "standard",
+    "lint:fix": "standard --fix"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^3.9.2"
+  },
+  "devDependencies": {
+    "standard": "^16.0.3"
+  }
+}
