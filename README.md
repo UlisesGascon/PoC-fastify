@@ -34,3 +34,8 @@ PoC fastify framework for modern API development
 - [Documentation](https://www.fastify.io/docs/latest/Getting-Started/#validate-your-data)
 - [Sample](basics/validate_data.js)
 
+
+### Serialize data
+
+- [Documentation](https://www.fastify.io/docs/latest/Getting-Started/#serialize-your-data)
+- [Sample](basics/serialize_data.js)
