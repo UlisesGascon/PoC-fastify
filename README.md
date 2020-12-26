@@ -28,3 +28,9 @@ PoC fastify framework for modern API development
 - [Documentation](https://www.fastify.io/docs/latest/Getting-Started/#your-first-plugin)
 - [Sample](basics/basic_plugin.js)
 
+
+### Validate data (Json Schemas)
+
+- [Documentation](https://www.fastify.io/docs/latest/Getting-Started/#validate-your-data)
+- [Sample](basics/validate_data.js)
+
