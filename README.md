@@ -184,3 +184,61 @@ Notes:
 
 
 [Documentation](https://www.fastify.io/docs/latest/Routes/#url-building)
+
+
+### Async/Await in Routes
+
+**Using return**
+
+```js
+fastify.get('/', options, async function (request, reply) {
+  var data = await getData()
+  var processed = await processData(data)
+  return processed
+})
+```
+
+**Using `reply.send`**
+
+```js
+fastify.get('/', options, async function (request, reply) {
+  var data = await getData()
+  var processed = await processData(data)
+  reply.send(processed)
+})
+```
+
+**Wrapping a callback-based API**
+```js
+fastify.get('/', options, async function (request, reply) {
+  setImmediate(() => {
+    reply.send({ hello: 'world' })
+  })
+  await reply
+})
+```
+
+**Wrapping a callback-based API with `return`**
+```js
+fastify.get('/', options, async function (request, reply) {
+  setImmediate(() => {
+    reply.send({ hello: 'world' })
+  })
+  return reply
+})
+```
+
+**Remember about promise resolution:**
+- If you want to use `async/await` or promises but respond a value with `reply.send`:
+    - Don't `return` any value.
+    - Don't forget to call `reply.send`.
+- If you want to use async/await or promises:
+    - Don't use `reply.send`.
+    - Don't return `undefined`.
+
+Notes:
+- When using both `return value` and `reply.send(value)` at the same time, the first one that happens takes precedence, the second value will be discarded, and a warn log will also be emitted because you tried to send a response twice.
+- You can't return `undefined`.
+
+[Documentation](https://www.fastify.io/docs/latest/Routes/#async-await)
+
