@@ -242,3 +242,11 @@ Notes:
 
 [Documentation](https://www.fastify.io/docs/latest/Routes/#async-await)
 
+
+
+## Advance
+
+### Route Prefixing
+
+- [Sample](advance/route_prefix.js)
+- [Documentation](https://www.fastify.io/docs/latest/Routes/#route-prefixing)
