@@ -250,3 +250,10 @@ Notes:
 
 - [Sample](advance/route_prefix.js)
 - [Documentation](https://www.fastify.io/docs/latest/Routes/#route-prefixing)
+
+
+### Routes
+- [Documentation: Custom Log Level](https://www.fastify.io/docs/latest/Routes/#custom-log-level)
+- [Documentation: Custom Log Serializer](https://www.fastify.io/docs/latest/Routes/#custom-log-serializer)
+- [Documentation: Config](https://www.fastify.io/docs/latest/Routes/#config)
+- [Documentation: Version](https://www.fastify.io/docs/latest/Routes/#version)
