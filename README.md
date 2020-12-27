@@ -74,3 +74,62 @@ const fastify = require('fastify')({
     // https://www.fastify.io/docs/latest/Server/#clienterrorhandler
   })
 ```
+
+
+## Routing
+
+### Routes options
+
+Sintaxis:
+```js
+const fastify = require('fastify')
+
+fastify.route({
+  method: 'GET',
+  url: '/',
+  handler: (request, reply) => {
+    reply.send({ hello: 'world' })
+  }
+})
+```
+
+
+Options:
+
+```js
+const options = {
+    method: 'GET',
+    url: '/',                     // Can be named path too
+    schema,                       // Request and response schema using JSON Schema
+    attachValidation,             // Custom error send in case of schema error
+    bodyLimit: 1048576,           // Defaults to 1048576 (1 MiB).
+    logLevel,                     // Set log level for this route
+    logSerializers,               // Set serializers to log for this route
+    config,                       // Object used to store custom configuration
+    version,                      // Semver compatible string that defined the version of the endpoint
+    prefixTrailingSlash: 'both',  // both | slash | no-slash
+
+    // Schemas and Validation
+    validatorCompiler: ({ schema, method, url, httpPart }) => {}, // Function that builds schemas for request validations
+    serializerCompiler: ({ { schema, method, url, httpStatus } }) => {}, // Function that builds schemas for response serialization
+    schemaErrorFormatter: (errors, dataVar) => {}   // Function that formats the errors from the validation compiler
+
+    // Hooks
+    onRequest: (request, reply, done) => {},        // As soon that a request is received
+    preParsing: (request, reply, done) => {},       // Called before parsing the request
+    preValidation: (request, reply, done) => {},    // Called after the shared preValidation hooks, useful for authentication at route level
+    preHandler: (request, reply, done) => {},       // Called just before the request handler,
+    preSerialization: (request, reply, payload, done) => {}, // Called just before the serialization
+    onSend: (request, reply, payload, done) => {},  // Called right before a response is sent
+    onResponse: (request, reply, done) => {},       // Called when a response has been sent, so you will not be able to send more data to the client
+    handler: (request, reply) => {},                // The function that will handle this request.  Note: using an arrow function will break the binding of this.
+    errorHandler: (error, request, reply) => {},    // Custom error handler for the scope of the request
+}
+
+```
+
+Notes:
+- Most of the options supports Arrays
+
+
+[Documentation](https://www.fastify.io/docs/latest/Routes/#routes-option)
