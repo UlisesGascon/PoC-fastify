@@ -257,3 +257,15 @@ Notes:
 - [Documentation: Custom Log Serializer](https://www.fastify.io/docs/latest/Routes/#custom-log-serializer)
 - [Documentation: Config](https://www.fastify.io/docs/latest/Routes/#config)
 - [Documentation: Version](https://www.fastify.io/docs/latest/Routes/#version)
+
+
+### Encapsulation
+
+**Diagram**
+
+![Encapsulation context relationship](resources/encapsulation_context.svg)
+
+
+- [Sample](advance/encapsulation.js)
+- [Sample: Sharing Between Contexts](advance/encapsulation_contexts.js)
+- [Documentation](https://www.fastify.io/docs/latest/Encapsulation/)

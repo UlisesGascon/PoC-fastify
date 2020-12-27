@@ -11,7 +11,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fastify": "^3.9.2"
+    "fastify": "^3.9.2",
+    "fastify-bearer-auth": "^5.0.2"
   },
   "devDependencies": {
     "standard": "^16.0.3"
