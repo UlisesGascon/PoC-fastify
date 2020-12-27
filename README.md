@@ -133,3 +133,28 @@ Notes:
 
 
 [Documentation](https://www.fastify.io/docs/latest/Routes/#routes-option)
+
+
+### Shorthand declaration
+
+Configuration
+```
+fastify.get(path, [options], handler)
+fastify.head(path, [options], handler)
+fastify.post(path, [options], handler)
+fastify.put(path, [options], handler)
+fastify.delete(path, [options], handler)
+fastify.options(path, [options], handler)
+fastify.patch(path, [options], handler)
+```
+
+Example
+```js
+const fastify = require('fastify')
+
+fastify.get('/', opts, (request, reply) => {
+  reply.send({ hello: 'world' })
+})
+```
+
+[Documentation](https://www.fastify.io/docs/latest/Routes/#shorthand-declaration)
