@@ -158,3 +158,29 @@ fastify.get('/', opts, (request, reply) => {
 ```
 
 [Documentation](https://www.fastify.io/docs/latest/Routes/#shorthand-declaration)
+
+
+### Url building
+
+```js
+// parametric
+fastify.get('/example/:userId', (request, reply) => {})
+fastify.get('/example/:userId/:secretToken', (request, reply) => {})
+
+// parametric with regexp
+fastify.get('/example/:file(^\\d+).png', (request, reply) => {})
+
+// wildcard
+fastify.get('/example/*', (request, reply) => {})
+
+// Advance
+fastify.get('/example/near/:lat-:lng/radius/:r', (request, reply) => {}) //  use the dash ("-") as parameters separator.
+fastify.get('/example/at/:hour(^\\d{2})h:minute(^\\d{2})m', (request, reply) => {})
+```
+
+Notes:
+- Having a route with multiple parameters may affect negatively the performance. Try to use only one.
+- Check [find-my-way](https://github.com/delvedor/find-my-way) for a better understanding
+
+
+[Documentation](https://www.fastify.io/docs/latest/Routes/#url-building)
